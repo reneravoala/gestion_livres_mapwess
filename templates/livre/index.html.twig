@@ -4,7 +4,7 @@
 
 {% block body %}
     <h1>Liste des livres</h1>
-
+<div class="table-responsive">
     <table class="table table-hover">
         <thead>
             <tr>
@@ -39,6 +39,6 @@
         {% endfor %}
         </tbody>
     </table>
-
+</div>
     <a href="{{ path('livre_new') }}" class="btn btn-primary"><span class="fa fa-plus"></span> Ajouter un livre</a>
 {% endblock %}

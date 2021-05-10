@@ -19,7 +19,10 @@ class UserType extends AbstractType
                 'label' => "Votre nom"
             ))
             ->add('mail',null,array(
-                'label' => "Votre adresse email"
+                'label' => "Votre adresse email",
+                'attr' => array(
+                    'placeholder' => 'monemail@gmail.com'
+                )
             ))
             ->add('password', RepeatedType::class, array(
                 'type' => PasswordType::class,
@@ -34,10 +37,13 @@ class UserType extends AbstractType
                 'required' => true,
             ))
             ->add('numTel',null,array(
-                'label' => "Votre numéro téléphone"
+                'label' => "Votre numéro téléphone",
+                'attr' => array(
+                    'placeholder' => '+2613...'
+                )
             ))
             ->add('captcha', CaptchaType::class,array(
-                'label' => "Veillez copier le texte sur l'image ci-après"
+                'label' => "Veillez copier le texte sur l'image ci-après"   
             ))
         ;
     }

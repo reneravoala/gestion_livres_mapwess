@@ -7,7 +7,7 @@
 
     {{ include('livre/_form.html.twig', {'button_label': 'Confirmer'}) }}
 
-    <a href="{{ path('livre_index') }}">Revenir à la liste</a>
+    <a href="{{ path('livre_index') }}" class="btn btn-secondary">Revenir à la liste</a>
 
     {{ include('livre/_delete_form.html.twig') }}
 {% endblock %}

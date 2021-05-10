@@ -3,6 +3,7 @@
 namespace App\Model;
  
 use Symfony\Component\Security\Core\Validator\Constraints as SecurityAssert;
+use Symfony\Component\Validator\Constraints as Assert;
  
 class ChangePassword
 {
@@ -13,6 +14,9 @@ class ChangePassword
      */
     protected $oldPassword;
      
+    /**
+     * @Assert\Length(min=8, minMessage="Veillez saisir plus de 8 caractères")
+     */
     protected $password;
              
      

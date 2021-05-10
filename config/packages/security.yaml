@@ -1,6 +1,8 @@
 security:
     encoders: 
-        App\Entity\User: plaintext
+        App\Entity\User: 
+            algorithm: bcrypt
+            cost: 12
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
         app_user_provider:

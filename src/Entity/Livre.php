@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\LivreRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=LivreRepository::class)
@@ -19,6 +20,7 @@ class Livre
 
     /**
      * @ORM\Column(type="string", length=50)
+     * @Assert\Length(min=5, minMessage="Veillez saisir plus de 4 caractères")
      */
     private $titre;
 
@@ -34,6 +36,10 @@ class Livre
 
     /**
      * @ORM\Column(type="string", length=100)
+     * @Assert\Length(min=5, minMessage="Veillez saisir plus de 5 caractères")* 
+     * @Assert\Regex(
+     *     pattern     = "/^[A-Z]+/",
+     * )
      */
     private $auteurs;
 

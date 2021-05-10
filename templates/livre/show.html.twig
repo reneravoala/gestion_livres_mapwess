@@ -4,7 +4,7 @@
 
 {% block body %}
     <h1>Livre</h1>
-
+    <div class="table-responsive">
     <table class="table">
         <tbody>
             <tr>
@@ -28,9 +28,10 @@
             </tr>
             </tr>
         </tbody>
+    </div>
     </table>
 
-    <a href="{{ path('livre_index') }}" class="btn btn-primary">Revenir à la liste</a>
+    <a href="{{ path('livre_index') }}" class="btn btn-secondary">Revenir à la liste</a>
 
     {% if app.user.id == livre.user.id %}
     <a href="{{ path('livre_edit', {'id': livre.id}) }}" class="btn btn-secondary" title="Modifier"><span class="fa fa-edit"></span></a>
