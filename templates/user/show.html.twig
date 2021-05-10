@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Profil{% endblock %}
+
+{% block body %}
+
+<div class="example-wrapper">
+    <h1>Bonjour {{ app.user.nom}}</h1>
+
+    <ul class="list-group">
+        <li class="list-group-item">Votre addresse email est {{ app.user.mail }}</li>
+        <li class="list-group-item">Votre numéro est {{ app.user.numTel}}</li>
+      </ul>
+    
+</div>
+{% endblock %}

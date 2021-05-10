@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PasswordController!{% endblock %}
+
+{% block body %}
+{{ form_start(form) }}
+    <div class="col-md-4">{{ form_row(form.oldPassword) }}</div>
+    <div class="col-md-4">{{ form_row(form.password) }}</div>
+
+    {{ form_widget(form) }}
+    <button class="btn btn-primary">Envoyer</button>
+{{ form_end(form) }}
+{% endblock %}

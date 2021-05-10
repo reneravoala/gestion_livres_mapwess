@@ -1,0 +1,36 @@
+security:
+    encoders: 
+        App\Entity\User: plaintext
+    # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
+    providers:
+        app_user_provider:
+            entity:
+                class: App\Entity\User
+                property: mail
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        main:
+            anonymous: true
+            # lazy: true
+            provider: app_user_provider
+            logout:
+                path:   app_logout
+                target: app_login
+            switch_user: true
+            form_login: 
+                check_path: app_login
+                default_target_path:  mon-profil
+
+            # activate different ways to authenticate
+            # https://symfony.com/doc/current/security.html#firewalls-authentication
+
+            # https://symfony.com/doc/current/security/impersonating_user.html
+            # switch_user: true
+
+    # Easy way to control access for large sections of your site
+    # Note: Only the *first* access control that matches will be used
+    access_control:
+         - { path: ^/livre, roles: ROLE_USER }
+        # - { path: ^/profile, roles: ROLE_USER }

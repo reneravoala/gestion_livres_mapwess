@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {# Run `composer require symfony/webpack-encore-bundle`
+           and uncomment the following Encore helpers to start using Symfony UX #}
+        {% block stylesheets %}
+            {#{{ encore_entry_link_tags('app') }}#}
+        {% endblock %}
+
+        {% block javascripts %}
+            {#{{ encore_entry_script_tags('app') }}#}
+        {% endblock %}
+    </head>
+    <body>
+        {% if app.user %}
+            
+        <nav class="navbar bg-dark navbar-dark navbar-expand-sm">
+
+            <!-- Links -->
+            <ul class="navbar-nav">
+                <li class="nav-item {% if current_page is defined and current_page == "livre" %}active{% endif %}">
+                  <a class="nav-link" href="{{ path('livre_index') }}"><span class="fa fa-book"></span> Livres</a>
+                </li>
+              <li class="nav-item {% if current_page is defined and current_page == "profil" %}active{% endif %}">
+                <a class="nav-link" href="{{ path('mon-profil') }}"><span class="fa fa-user-circle"></span> Mon profil</a>
+              </li>
+              <li class="nav-item {% if current_page is defined and current_page == "update-password" %}active{% endif %}">
+                <a class="nav-link" href="{{ path('reset-password') }}"><span class="fa fa-key"></span> Modifier mon mot de passe</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ path('app_logout') }}"><span class="fa fa-power-off"></span> Déconnexion</a>
+              </li>
+            </ul>
+          
+          </nav>
+          
+        {% endif %}
+    {% for message in app.flashes('success') %}
+    <div class="alert alert-success">
+        {{ message }}
+    </div>
+    {% endfor %}
+    {% for message in app.flashes('error') %}
+    <div class="alert alert-danger">
+        {{ message }}
+    </div>
+    {% endfor %}
+        <div class="m-5">{% block body %}{% endblock %}</div>
+    </body>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</html>

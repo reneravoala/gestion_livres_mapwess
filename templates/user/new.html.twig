@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription{% endblock %}
+
+{% block body %}
+    <h1>Inscription</h1>
+    {{ form_start(form) }}
+    <div class="row">
+        <div class="col-md-4">{{ form_row(form.nom) }}</div>
+        <div class="col-md-4">{{ form_row(form.mail) }}</div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">{{ form_row(form.password) }}</div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">{{ form_row(form.numTel) }}</div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">{{ form_row(form.captcha) }}</div>
+    </div>
+    {{ form_widget(form) }}
+    <button class="btn btn-primary">{{ button_label|default('Sauver') }}</button>
+    {{ form_end(form) }}
+
+    <a href="{{ path('app_login') }}">Vous avez déjà un compte, connectez-vous ici</a>
+{% endblock %}
