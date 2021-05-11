@@ -5,7 +5,7 @@
 <h1>Installation</h1>
 <ul>
   <li>Cloner ou télécharger le projet</li>
-  <li>Importer la base de données MySQL gestion_livres</li>
+  <li>Importer la base de données MySQL <strong>gestion_livres.sql</strong></li>
   <li>Configurer le fichier .env pour la connexion à la base MySQL à la ligne 30</li>
 </ul>
 
