@@ -14,4 +14,5 @@
   <li>Lancer l'invite de commande dans le dossier, taper <strong>php -S 127.0.0.1:8000 -t public</strong> puis entrer</li>
   <li>Lancer MySQL</li>
   <li>Ouvrrir le navigateur et entrer le lien <strong>127.0.0.1:8000</strong></li>
+  <li>Utilisateur déjà inscrit : "Test T", mot de passe: "12345678"</li>
 </ul>
