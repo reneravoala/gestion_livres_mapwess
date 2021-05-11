@@ -85,7 +85,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `nom`, `mail`, `password`, `num_tel`) VALUES
-(16, 'Test T', 'test@gmail.com', '$2y$12$3RRCv.4e0bK27pY6RqsDuOT3iFXm7G7aTGl/d.cl3Kp46kihT2yAe', '+261329236895');
+(16, 'Test T', 'test@gmail.com', '$2y$12$39SEVYi3Cm.tQKgGbSmp2.9eyQcXhGGDMiFoRiM9ao3srzRtm.Nz6', '+261329236895');
 
 --
 -- Index pour les tables déchargées
