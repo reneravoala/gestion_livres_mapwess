@@ -1,5 +1,5 @@
 <h1>Application de gestion de livres</h1>
-<p>Gestion de livre incluant la session utilisateur avec mot de passe crypté.</p>
+<p>Gestion de livre incluant la session utilisateur.</p>
 <p>Et comprenanant un CRUD des livres et la modification de mot de passe après connexion.</p>
 
 <h1>Installation</h1>
